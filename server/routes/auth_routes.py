@@ -15,7 +15,8 @@ def register():
     if users.find_one({"username": username}):
         return jsonify({"msg": "User already exists"}), 400
 
-    hashed_pw = generate_password_hash(password)
+    # ✅ Fix phương thức hash để tránh lỗi scrypt
+    hashed_pw = generate_password_hash(password, method='pbkdf2:sha256')
     users.insert_one({"username": username, "password": hashed_pw})
 
     return jsonify({"msg": "User registered successfully"}), 201
@@ -30,13 +31,11 @@ def login():
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"msg": "Invalid credentials"}), 401
 
-    # auth_routes.py
-    access_token = create_access_token(identity=username)  # chỉ dùng string
-
+    access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token), 200
 
 @auth_bp.route('/me', methods=['GET'])
 @jwt_required()
 def get_user_info():
-    current_user = get_jwt_identity()  # sẽ là dict {"username": ..., "role": ...}
+    current_user = get_jwt_identity()
     return jsonify(user=current_user), 200

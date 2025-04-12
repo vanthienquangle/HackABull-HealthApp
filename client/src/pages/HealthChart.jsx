@@ -10,6 +10,7 @@ function HealthChart() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    console.log("Token JWT:", token);
     axios.get("http://localhost:5001/api/health/history", {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -40,7 +41,7 @@ function HealthChart() {
       });
     })
     .catch(err => {
-      console.error("⚠️ Lỗi khi lấy dữ liệu biểu đồ:", err);
+      console.error("Lỗi khi lấy dữ liệu biểu đồ:", err);
     });
   }, []);
 

@@ -22,9 +22,11 @@ jwt.init_app(app)
 # Đăng ký các route
 from routes.auth_routes import auth_bp
 from routes.health_routes import health_bp
+from routes.predict_routes import predict_bp
 
 app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(health_bp, url_prefix="/api")
+app.register_blueprint(predict_bp, url_prefix="/api")
 
 # Chạy app
 if __name__ == "__main__":

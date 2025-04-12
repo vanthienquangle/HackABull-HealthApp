@@ -34,8 +34,16 @@ def save_health_data():
 @jwt_required()
 def get_health_history():
     db = current_app.db
+
+    # Log identity
     username = get_jwt_identity()
+    print("🧠 USERNAME từ token:", username)
+
+    # Lấy record
     records = db.health.find({"username": username})
+
+    # Log số lượng record
+    print("Số record tìm được:", records.count())
 
     result = []
     for r in records:
@@ -46,3 +54,4 @@ def get_health_history():
         })
 
     return jsonify(result), 200
+
