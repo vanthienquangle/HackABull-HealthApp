@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import {
@@ -14,6 +15,7 @@ import {
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
 
 function HealthForm() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     Age: "",
     Sex: "",
@@ -379,6 +381,9 @@ function HealthForm() {
                     type="submit" 
                     className="bg-teal-600 text-white px-6 py-2 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 flex items-center justify-center"
                     disabled={loading}
+                    onClick={() => {
+                      navigate("/dashboard")
+                    }}
                   >
                     {loading ? (
                       <>

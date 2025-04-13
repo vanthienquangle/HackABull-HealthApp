@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function HealthTable() {
+  const navigate = useNavigate();
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -57,7 +59,7 @@ function HealthTable() {
   }
 
   return (
-    <div className="p-6 mt-6 w-full max-w-4xl mx-auto bg-white rounded-lg shadow-md">
+    <div className="w-full max-w-full mx-auto bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Health History</h2>
       <p className="text-gray-600 mb-4">Track your health metrics over time to see your progress</p>
       
@@ -123,7 +125,10 @@ function HealthTable() {
         <div className="text-sm text-gray-500">
           {records.length} health records found
         </div>
-        <button className="px-4 py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600 transition-colors">
+        <button className="px-4 py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600 transition-colors"
+          onClick={() => {
+            navigate("/health")
+          }}>
           New Assessment
         </button>
       </div>

@@ -32,8 +32,10 @@ def get_meal_suggestion():
         region="Vietnamese"
     )
 
+    meals = meals.split("\n")
+
     return jsonify({
-        "meals": meals.split("\n"),
+        "meals": [item.split("*") for item in meals],
         "nutrition": {
             "protein": round(protein, 1),
             "carb": round(carb, 1),

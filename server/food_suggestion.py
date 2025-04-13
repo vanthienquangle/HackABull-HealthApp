@@ -22,9 +22,13 @@ Use the following required nutritional targets:
 The region is: {region}
 The meal type is: {food_type}
 
-Return only the name of the meal and bullet points of ingredients or dishes that match this nutritional profile. Keep it culturally appropriate.
+Return only the names of the meal or dishes that match this nutritional profile on three separate lines with their protein, fiber, fat, carb.
+Keep it culturally appropriate but don't make the name too long.
+Your whole response text answer should look like this, do not add anything else in your response even disclaimer:
+Name_1*protein_amount*fiber_amount*fat_amount*carb_amount
+Name_2*protein_amount*fiber_amount*fat_amount*carb_amount
+Name_3*protein_amount*fiber_amount*fat_amount*carb_amount
 """
-
     try:
         response = model.generate_content(prompt)
         return response.text
