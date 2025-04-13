@@ -7,7 +7,7 @@ from food_suggestion import suggest_food
 meal_bp = Blueprint("meal", __name__)
 model = joblib.load("nutrition_model.pkl")
 
-@meal_bp.route("/meal-suggestion", methods=["POST"])
+@meal_bp.route("/meal-suggestion", methods=["GET"])
 @jwt_required()
 def get_meal_suggestion():
     db = current_app.db
