@@ -43,7 +43,7 @@ function AboutSection() {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold text-neutral-800 mb-3">Our Hackathon Project</h3>
+            <h3 className="text-xl font-bold text-neutral-800 mb-3">Our Hackabull Project</h3>
             <p className="text-neutral-600 mb-4">
               Created during the USF Health Hackathon 2025, NeuroSure is our solution to make stroke 
               prevention accessible using AI and medical research to help people understand and reduce their risk.
