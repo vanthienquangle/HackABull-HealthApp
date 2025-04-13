@@ -3,10 +3,10 @@ import aboutImage from '../sub_assets/about_pic.jpg'
 
 function AboutSection() {
   const stats = [
-    { icon: <Users size={20} />, value: '500+', label: 'Beta Users' },
+    { icon: <Users size={20} />, value: '500+', label: 'Potential Beta Users' },
     { icon: <Award size={20} />, value: '1st', label: 'USF Innovation' },
     { icon: <TrendingUp size={20} />, value: '75%', label: 'Risk Detection' },
-    { icon: <Calendar size={20} />, value: '48 hrs', label: 'Development Time' }
+    { icon: <Calendar size={20} />, value: '24 hrs', label: 'Development Time' }
   ];
 
   return (
