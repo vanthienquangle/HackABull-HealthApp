@@ -2,10 +2,24 @@ import { Fingerprint } from "lucide-react";
 import { AudioWaveform } from "lucide-react";
 import { Brain } from "lucide-react";
 
+// constants.js
 export const navItems = [
-  { label: "About Us", href: "#" },
-  { label: "Features", href: "#" },
-  { label: "Contact Us", href: "#" },
+  {
+    id: "hero",
+    label: "Home",
+    href: "#hero" 
+  },
+  {
+    id: "features",
+    label: "Features",
+    href: "#features"
+  },
+  {
+    id: "about",
+    label: "About",
+    href: "#about"
+  }
+  // Add more navigation items as needed
 ];
 
 
