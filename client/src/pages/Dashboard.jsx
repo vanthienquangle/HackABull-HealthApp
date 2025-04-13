@@ -20,8 +20,7 @@ function Dashboard() {
     const token = localStorage.getItem("token");
   
     // Nếu chưa có username, chưa gọi
-    if (!token || !username) return;
-    // Fetch real stroke prediction
+    if (!token) return;
     axios.get("http://localhost:5001/api/predict-latest", {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -34,11 +33,6 @@ function Dashboard() {
     axios
       .get(
         "http://localhost:5001/api/meal/meal-suggestion",
-        // {
-        //   age: 25,
-        //   sex: 1,
-        //   bmi: 22.5,
-        // },
         {
           headers: {
             Authorization: `Bearer ${token}`,

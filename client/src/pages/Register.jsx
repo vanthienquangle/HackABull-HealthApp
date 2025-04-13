@@ -40,7 +40,7 @@ function Register() {
       <div className="hidden lg:flex lg:w-1/2 bg-teal-600 justify-center items-center p-12">
         <div className="max-w-md text-white">
           <div className="flex items-center mb-8">
-            <h1 className="text-4xl font-bold">NeuroSure</h1>
+            <h1 className="text-4xl font-bold">BeteTheStroke</h1>
           </div>
           <h2 className="text-3xl font-semibold mb-4">Smarter Stroke Prevention Starts Here</h2>
           <p className="text-lg opacity-90">
@@ -55,11 +55,11 @@ function Register() {
           <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
             <div className="lg:hidden flex items-center justify-center mb-8">
               <BrainCircuit size={32} className="text-teal-600 mr-2" />
-              <h1 className="text-2xl font-bold text-teal-600">NeuroSure</h1>
+              <h1 className="text-2xl font-bold text-teal-600">BeteTheStroke</h1>
             </div>
             
             <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">
-              Create Your <span className="text-teal-600">NeuroSure</span> Account
+              Create Your <span className="text-teal-600">BeteTheStroke</span> Account
             </h2>
             <p className="text-center text-gray-500 mb-8">
               Register to access our neural health analytics platform
@@ -184,7 +184,7 @@ function Register() {
 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <p className="text-xs text-center text-gray-500">
-                By creating an account, you acknowledge NeuroSure's Terms of Service and Privacy Policy.
+                By creating an account, you acknowledge BeteTheStroke's Terms of Service and Privacy Policy.
               </p>
               <div className="mt-4 flex justify-center space-x-4">
                 <a href="#" className="text-gray-400 hover:text-gray-600">

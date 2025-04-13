@@ -198,7 +198,7 @@ function HealthForm() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50 p-6">
+    <div className="min-h-screen bg-blue-50 p-6 overflow-y-auto">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Stroke Risk Assessment</h1>
         <p className="text-center text-gray-600 mb-8">Enter your health information for AI to predict stroke risk and receive personalized recommendations</p>

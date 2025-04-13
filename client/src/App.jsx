@@ -20,6 +20,7 @@ function App() {
         <Route path="/health" element={<HealthForm />} />
         <Route path="/history" element={<HealthChart />} />
         <Route path="/predict" element={<StrokePredictChart />} />
+        {/* <Route path="/badges" element={<Badges />} />  */}
       </Routes>
     </BrowserRouter>
   );

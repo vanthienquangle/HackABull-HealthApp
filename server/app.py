@@ -3,7 +3,6 @@ from flask_cors import CORS
 from config import Config
 from extensions import mongo, jwt
 
-
 # Khởi tạo Flask app và config
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -23,8 +22,10 @@ from routes.auth_routes import auth_bp
 from routes.health_routes import health_bp
 from routes.predict_routes import predict_bp
 from routes.meal_routes import meal_bp
+from routes.badge_routes import badge_bp
 
 
+app.register_blueprint(badge_bp, url_prefix="/api/badge")
 app.register_blueprint(meal_bp, url_prefix="/api/meal")
 app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(health_bp, url_prefix="/api")

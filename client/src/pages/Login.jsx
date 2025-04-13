@@ -31,12 +31,12 @@ export default function Login() {
       <div className="hidden lg:flex lg:w-1/2 bg-teal-600 justify-center items-center p-12">
         <div className="max-w-md text-white">
           <div className="flex items-center mb-8">
-            <h1 className="text-4xl font-bold">NeuroSure</h1>
+            <h1 className="text-4xl font-bold">BeteTheStroke</h1>
           </div>
           <h2 className="text-3xl font-semibold mb-4">Proactive Stroke Prevention with Intelligent Health Tools</h2>
           <p className="text-lg opacity-90">
             AI that helps prevent strokes — before they happen.
-            From personalized advice to daily nudges, NeuroSure guides you every step of the way.
+            From personalized advice to daily nudges, BeteTheStroke guides you every step of the way.
           </p>
         </div>
       </div>
@@ -47,14 +47,14 @@ export default function Login() {
           <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
             <div className="lg:hidden flex items-center justify-center mb-8">
               <BrainCircuit size={32} className="text-teal-600 mr-2" />
-              <h1 className="text-2xl font-bold text-teal-600">NeuroSure</h1>
+              <h1 className="text-2xl font-bold text-teal-600">BeteTheStroke</h1>
             </div>
             
             <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">
-              Welcome Back to <span className="text-teal-600">NeuroSure</span>
+              Welcome Back to <span className="text-teal-600">BeteTheStroke</span>
             </h2>
             <p className="text-center text-gray-500 mb-8">
-              Sign in to access your NeuroSure dashboard
+              Sign in to access your BeteTheStroke dashboard
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -152,7 +152,7 @@ export default function Login() {
 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <p className="text-xs text-center text-gray-500">
-                By signing in, you agree to NeuroSure's Terms of Service and Privacy Policy.
+                By signing in, you agree to BeteTheStroke's Terms of Service and Privacy Policy.
               </p>
               <div className="mt-4 flex justify-center space-x-4">
                 <a href="#" className="text-gray-400 hover:text-gray-600">
