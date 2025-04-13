@@ -12,8 +12,6 @@ function Dashboard() {
   // Mock data - replace with API calls in production
   const [userData, setUserData] = useState({
     strokeRisk: 15,
-    weeklyProgress: 5,
-    nutritionScore: 87,
     recommendedNutrients: {},
     foodRecommendations: []
   });
@@ -206,7 +204,7 @@ function Dashboard() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="flex-1 max-w-7xl mx-auto w-full mb-6">
           {/* Stroke Risk Card */}
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="flex items-center justify-between mb-4">
@@ -240,22 +238,6 @@ function Dashboard() {
                 '#F87171'
               } 
             />
-          </div>
-
-          {/* Nutrition Score Card */}
-          <div className="bg-white rounded-lg p-6 shadow-md">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-gray-700 text-lg font-medium">Điểm dinh dưỡng</h3>
-              <span className="bg-green-100 text-green-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">
-                Tuyệt vời
-              </span>
-            </div>
-            <div className="flex items-center mb-2">
-              <div className="text-3xl font-bold text-gray-800">{userData.nutritionScore}</div>
-              <div className="ml-2 text-sm text-gray-500">/100</div>
-            </div>
-            <p className="text-gray-600 text-sm mb-4">Làm tốt lắm! Tiếp tục theo khuyến nghị</p>
-            <ProgressBar value={userData.nutritionScore} max={100} color="#4ADE80" />
           </div>
         </div>
 
