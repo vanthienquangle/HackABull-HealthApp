@@ -381,9 +381,9 @@ function HealthForm() {
                     type="submit" 
                     className="bg-teal-600 text-white px-6 py-2 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 flex items-center justify-center"
                     disabled={loading}
-                    onClick={() => {
-                      navigate("/dashboard")
-                    }}
+                    // onClick={() => {
+                    //   navigate("/dashboard")
+                    // }}
                   >
                     {loading ? (
                       <>
@@ -401,6 +401,14 @@ function HealthForm() {
                     className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                   >
                     Reset
+                  </button>
+
+                  <button 
+                    type="button" 
+                    onClick={() => navigate("/dashboard")}
+                    className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  >
+                    Return
                   </button>
                 </div>
                 

@@ -27,9 +27,8 @@ def get_meal_suggestion():
         food_type="meal",
         protein=round(protein, 1),
         fiber=round(fiber, 1),
-        potassium=1000,
-        magnesium=300,
-        region="Vietnamese"
+        fat=round(fat, 1),
+        carb=round(carb, 1),
     )
 
     meals = meals.split("\n")

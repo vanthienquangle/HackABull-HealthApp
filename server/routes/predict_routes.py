@@ -1,4 +1,3 @@
-# predict_routes.py
 from flask import Blueprint, request, jsonify, current_app
 from flask_jwt_extended import jwt_required, get_jwt_identity
 import joblib
@@ -26,11 +25,9 @@ def predict_stroke():
             int(data.get("PhysActivity"))
         ]
 
-        # Predict
         prob = model.predict_proba([input_values])[0][1] * 100
         user_risk = round(prob, 2)
 
-        # Save to database
         db.predictions.insert_one({
             "username": username,
             "Age": input_values[0],
@@ -51,3 +48,19 @@ def predict_stroke():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@predict_bp.route("/predict-latest", methods=["GET"])
+@jwt_required()
+def get_latest_stroke_prediction():
+    db = current_app.db
+    username = get_jwt_identity()
+    record = db.predictions.find_one({"username": username}, sort=[("_id", -1)])
+
+    if not record:
+        return jsonify({"msg": "Chưa có dự đoán nào"}), 404
+
+    return jsonify({
+        "user_risk": record["user_risk"],
+        "healthy_risk": record["healthy_risk"],
+        "date": record["date"]
+    }), 200

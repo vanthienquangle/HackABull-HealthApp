@@ -11,7 +11,7 @@ function Dashboard() {
   
   // Mock data - replace with API calls in production
   const [userData, setUserData] = useState({
-    strokeRisk: 15,
+    strokeRisk: null,
     recommendedNutrients: {},
     foodRecommendations: []
   });
@@ -21,7 +21,16 @@ function Dashboard() {
   
     // Nếu chưa có username, chưa gọi
     if (!token || !username) return;
-  
+    // Fetch real stroke prediction
+    axios.get("http://localhost:5001/api/predict-latest", {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then(res => {
+      setUserData(prev => ({ ...prev, strokeRisk: res.data.user_risk }));
+    })
+    .catch(err => {
+      console.error("Lỗi khi lấy dữ liệu stroke prediction:", err);
+    });
     axios
       .get(
         "http://localhost:5001/api/meal/meal-suggestion",
@@ -210,11 +219,11 @@ function Dashboard() {
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-gray-700 text-lg font-medium">Stroke Prediction</h3>
               <span className={`text-sm font-semibold px-2.5 py-0.5 rounded-full ${
-                userData.strokeRisk < 3 ? 'bg-green-100 text-green-800' : 
+                userData.strokeRisk < 5 ? 'bg-green-100 text-green-800' : 
                 userData.strokeRisk < 15 ? 'bg-yellow-100 text-yellow-800' : 
                 'bg-red-100 text-red-800'
               }`}>
-                {userData.strokeRisk < 3 ? 'Low' : 
+                {userData.strokeRisk < 5 ? 'Low' : 
                  userData.strokeRisk < 15 ? 'Mid' : 
                  'High'}
               </span>
@@ -225,7 +234,7 @@ function Dashboard() {
             </div>
             <p className="text-gray-600 text-sm mb-4"></p>
             <span className="text-gray-600 text-sm mb-4">
-              {userData.strokeRisk < 3 ? "Low chance - Let's keep this up!" : 
+              {userData.strokeRisk < 5 ? "Low chance - Let's keep this up!" : 
                  userData.strokeRisk < 15 ? "Be careful! Follow the guidelines!" : 
                  'High chance - Follow strictly to the guidelines!'}
             </span>
@@ -280,7 +289,7 @@ function Dashboard() {
         {/* Food Recommendations Card */}
         <div className="bg-white rounded-lg p-6 shadow-md">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-gray-700 text-lg font-medium">Suggested Meals Plan</h3>
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Suggested Meals Plan</h2>
             <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-medium">
               Today
             </span>

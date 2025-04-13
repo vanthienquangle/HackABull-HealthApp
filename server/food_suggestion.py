@@ -8,7 +8,7 @@ genai.configure(api_key="AIzaSyDQa8b4K1Wcpc3OhpXBtGDgym5eXJgtPOY")
 
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-def suggest_food(food_type, protein, fiber, potassium, magnesium, region="All around the world"):
+def suggest_food(food_type, protein, fiber, fat, carb, region="All around the world"):
     prompt = f"""
 You are a helpful nutritionist. Generate a detailed meal suggestion for a diabetic patient.
 The meal should be appropriate for someone with diabetes and follow regional cuisine guidelines.
@@ -16,8 +16,8 @@ Use the following required nutritional targets:
 
 - Protein: {protein}g
 - Fiber: {fiber}g
-- Potassium: {potassium}mg
-- Magnesium: {magnesium}mg
+- Fat: {fat}g
+- Carb: {carb}g
 
 The region is: {region}
 The meal type is: {food_type}
