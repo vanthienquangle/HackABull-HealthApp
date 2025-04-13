@@ -1,6 +1,7 @@
 // HeroSection.jsx
 import { ArrowRight, Activity, Shield, Heart } from 'lucide-react';
 import landingPic from '../assets/landingPic.jpg';
+// import ThreeDAnimation from "../components/ThreeDAnimation"
 
 const HeroSection = () => {
   return (
@@ -71,6 +72,8 @@ const HeroSection = () => {
                 alt="NeuroSure Dashboard" 
                 className="rounded-xl w-full h-full object-cover shadow-inner"
               />
+
+              {/* <ThreeDAnimation className="rounded-xl w-full h-full object-cover shadow-inner"/> */}
               
               <div className="absolute -bottom-5 -right-5 bg-white rounded-lg shadow-lg p-4 flex items-center">
                 <div className="bg-teal-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
