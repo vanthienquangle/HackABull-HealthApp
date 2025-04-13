@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 badge_bp = Blueprint("badges", __name__)
 
-@badge_bp.route("/badges", methods=["POST"])
+@badge_bp.route("/badges/checkin", methods=["POST"])
 @jwt_required()
 def checkin():
     db = current_app.db
