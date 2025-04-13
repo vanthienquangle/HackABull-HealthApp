@@ -7,6 +7,7 @@ import HealthChart from "./pages/HealthChart";
 import StrokePredictChart from "./pages/StrokePredictChart";
 import MealSuggestion from "./pages/MealSuggestion";
 import LandingPage from "./pages/LandingPage";
+import Badges from "./pages/Badges";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/health" element={<HealthForm />} />
         <Route path="/history" element={<HealthChart />} />
         <Route path="/predict" element={<StrokePredictChart />} />
-        {/* <Route path="/badges" element={<Badges />} />  */}
+        <Route path="/meals" element={<MealSuggestion />} />
+        <Route path="/badges" element={<Badges />} />
       </Routes>
     </BrowserRouter>
   );

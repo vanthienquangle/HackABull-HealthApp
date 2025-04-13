@@ -162,6 +162,16 @@ function Dashboard() {
         </div>
         <div className="flex items-center space-x-4">
           <button
+            onClick={() => navigate("/badges")}
+            className="bg-teal-50 text-teal-600 hover:bg-teal-100 px-4 py-2 rounded-md transition-colors flex items-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="8" r="7" />
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+            </svg>
+            Badges
+          </button>
+          <button
             onClick={() => navigate("/health")}
             className="bg-teal-50 text-teal-600 hover:bg-teal-100 px-4 py-2 rounded-md transition-colors flex items-center"
           >
@@ -184,6 +194,32 @@ function Dashboard() {
           </button>
         </div>
       </header>
+
+      {/* Navigation Tabs */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <nav className="flex space-x-8">
+            <button 
+              onClick={() => navigate("/")}
+              className="py-4 px-1 border-b-2 border-teal-500 text-teal-600 font-medium"
+            >
+              Dashboard
+            </button>
+            <button 
+              onClick={() => navigate("/badges")}
+              className="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 font-medium"
+            >
+              Achievement Badges
+            </button>
+            <button 
+              onClick={() => navigate("/health")}
+              className="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 font-medium"
+            >
+              Health Assessment
+            </button>
+          </nav>
+        </div>
+      </div>
 
       {/* Main Content */}
       <main className="flex-1 p-6 max-w-7xl mx-auto w-full">
