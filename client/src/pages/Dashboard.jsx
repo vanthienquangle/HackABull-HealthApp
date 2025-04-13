@@ -292,7 +292,7 @@ function Dashboard() {
             {userData.foodRecommendations.map((food, index) => (
               <div key={index} className="flex p-4 bg-gray-50 rounded-lg hover:shadow-md transition-shadow">
                 <div className="text-3xl w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-sm">
-                  {food.image}
+                  {"🍽️"}
                 </div>
                 <div className="ml-4">
                   {console.log(food)}
