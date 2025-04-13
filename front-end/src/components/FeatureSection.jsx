@@ -1,42 +1,56 @@
+// FeatureSection.jsx
 import { features } from "../constants";
+import { ArrowRight } from 'lucide-react'; 
 
 const FeatureSection = () => {
   return (
-    <div className="relative mt-8 border-b border-gray-200 bg-gray-50 py-10 px-4">
-      <div className="text-center">
-        <span className="bg-teal-100 text-teal-700 rounded-full h-6 text-sm font-medium px-3 py-1 uppercase tracking-wider">
-          Features
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-4 lg:mt-8 tracking-tight text-neutral-800">
-          Empower better health with{" "}
-          <span className="bg-gradient-to-r from-teal-500 to-teal-700 text-transparent bg-clip-text">
-            smarter tools
+    <div id="features" className="py-20 px-4 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="bg-teal-100 text-teal-700 rounded-full text-sm font-medium px-4 py-1.5 inline-block mb-4">
+            FEATURES
           </span>
-        </h2>
-      </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 max-w-4xl mx-auto">
+            Empower better health with{" "}
+            <span className="bg-gradient-to-r from-teal-500 to-teal-700 text-transparent bg-clip-text">
+              smarter tools
+            </span>
+          </h2>
+          <p className="mt-6 text-lg text-neutral-600 max-w-3xl mx-auto">
+            Our platform combines advanced AI with medical expertise to help you understand
+            and reduce your stroke risk through personalized insights and practical actions.
+          </p>
+        </div>
 
-      <div className="flex flex-wrap mt-10 justify-center max-w-7xl mx-auto">
-        {features.map((feature, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 px-6 mb-8">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-12 w-12 p-3 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center shadow-sm">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div key={index} className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100 hover:border-teal-100 group">
+              <div className="w-14 h-14 bg-teal-100 text-teal-700 rounded-lg flex items-center justify-center mb-5 group-hover:bg-teal-600 group-hover:text-white transition-all">
                 {feature.icon}
               </div>
-              <div className="ml-4">
-                <h5 className="text-lg font-semibold text-neutral-800 mb-2">
-                  {feature.text}
-                </h5>
-                <p className="text-md text-neutral-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-neutral-800 mb-3">
+                {feature.text}
+              </h3>
+              <p className="text-neutral-600 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <a 
+            href="#learn-more" 
+            className="inline-flex items-center text-teal-600 font-medium hover:text-teal-700"
+          >
+            Explore all features
+            <ArrowRight size={16} className="ml-1" />
+          </a>
+        </div>
       </div>
     </div>
-
   );
 };
 
-export default FeatureSection;
+
+export default FeatureSection
