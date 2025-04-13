@@ -77,7 +77,7 @@ function Navbar() {
                 <div className="absolute -inset-1 bg-teal-100 rounded-full blur-md opacity-0 group-hover:opacity-70 transition-opacity"></div>
               </div>
               <span className="text-xl font-bold tracking-tight text-neutral-800">
-                Neuro<span className="text-teal-600">Sure</span>
+                Bete<span className="text-teal-600">TheStroke</span>
               </span>
             </a>
           </div>
