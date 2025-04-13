@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import HealthChart from "./HealthChart";
+// import HealthChart from "./HealthChart";
+import HealthTable from "../components/HealthTable";
 
 function Dashboard() {
   const [username, setUsername] = useState("");
@@ -47,8 +48,11 @@ function Dashboard() {
       </button>
   
       {/* ✅ Biểu đồ sức khỏe */}
-      <div className="mt-8 w-full px-4">
+      {/* <div className="mt-8 w-full px-4">
         <HealthChart />
+      </div> */}
+      <div>
+        <HealthTable />
       </div>
     </div>
   );  
