@@ -6,13 +6,14 @@ import HealthForm from "./pages/HealthForm";
 import HealthChart from "./pages/HealthChart";
 import StrokePredictChart from "./pages/StrokePredictChart";
 import MealSuggestion from "./pages/MealSuggestion";
-
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<LandingPage />}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />

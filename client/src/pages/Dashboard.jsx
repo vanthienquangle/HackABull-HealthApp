@@ -15,10 +15,10 @@ function Dashboard() {
     weeklyProgress: 5,
     nutritionScore: 87,
     recommendedNutrients: {
-      protein: "75g daily",
-      fiber: "28g daily",
-      magnesium: "320mg daily",
-      potassium: "3500mg daily"
+      // protein: "",
+      // fiber: "",
+      // magnesium: "",
+      // potassium: ""
     },
     foodRecommendations: [
       {
@@ -38,6 +38,48 @@ function Dashboard() {
       }
     ]
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+  
+    // Nếu chưa có username, chưa gọi
+    if (!token || !username) return;
+  
+    axios
+      .get(
+        "http://localhost:5001/api/meal/meal-suggestion",
+        // {
+        //   age: 25,
+        //   sex: 1,
+        //   bmi: 22.5,
+        // },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((nutritionRes) => {
+        console.log("✅ Nutrition data:", nutritionRes.data);
+        const nutrients = nutritionRes.data.nutrition;
+
+        setUserData((prevData) => ({
+          ...prevData,
+          recommendedNutrients: {
+            protein: `${nutrients.protein}g daily`,
+            fiber: `${nutrients.fiber}g daily`,
+            magnesium: `${nutrients.fat}g daily`,
+            potassium: `${nutrients.carb}g daily`,
+          },
+        }));
+        console.log("bombardio crocodilo");
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("❌ Lỗi khi gọi meal-suggestion:", err);
+        setLoading(false);
+      });
+  }, [username]); // ✅ Chỉ chạy khi username có giá trị
 
   useEffect(() => {
     // Set current date
