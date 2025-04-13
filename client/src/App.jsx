@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import HealthForm from "./pages/HealthForm";
 import HealthChart from "./pages/HealthChart";
 import StrokePredictChart from "./pages/StrokePredictChart";
+import MealSuggestion from "./pages/MealSuggestion";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/health" element={<HealthForm />} />
         <Route path="/history" element={<HealthChart />} />
         <Route path="/predict" element={<StrokePredictChart />} />
+        <Route path="/meals" element={<MealSuggestion />} />
       </Routes>
     </BrowserRouter>
   );

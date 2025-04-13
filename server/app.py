@@ -22,7 +22,10 @@ app.db = mongo.db
 from routes.auth_routes import auth_bp
 from routes.health_routes import health_bp
 from routes.predict_routes import predict_bp
+from routes.meal_routes import meal_bp
 
+
+app.register_blueprint(meal_bp, url_prefix="/api")
 app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(health_bp, url_prefix="/api")
 app.register_blueprint(predict_bp, url_prefix="/api")
