@@ -25,7 +25,7 @@ from routes.predict_routes import predict_bp
 from routes.meal_routes import meal_bp
 
 
-app.register_blueprint(meal_bp, url_prefix="/api")
+app.register_blueprint(meal_bp, url_prefix="/api/meal")
 app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(health_bp, url_prefix="/api")
 app.register_blueprint(predict_bp, url_prefix="/api")
